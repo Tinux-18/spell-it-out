@@ -11,14 +11,22 @@ Almost mid way throught the book I had to spell out my name in German over the p
 
 This is where the idea came to write a hypermedia driven application which spells out a string for you using the phonetic alphabet.
 
+There is already a [tool](https://www.spelltool.com "www.spelltool.com") developed by Anguel Stankov written in PHP, but I wanted to give it a go as well.
+
 ## Stack
 
-- Python 3.11
-- HTMX
-- [Flask](https://palletsprojects.com/p/flask/)
-- [Jinja2](https://palletsprojects.com/p/jinja/)
+- Go
+- [HTMX](https://htmx.org/)
+- Tailwind
 
 ## Requirements
 
-- Poetry
-- Python 3.11
+- [Docker](https://docs.docker.com/get-docker/)
+- Go
+
+## Improvements
+
+- Update GO
+- Implement air
+- Get rid of Make
+- Add tests
