@@ -11,7 +11,9 @@ Almost mid way throught the book I had to spell out my name in German over the p
 
 This is where the idea came to write a hypermedia driven application which spells out a string for you using the phonetic alphabet.
 
-There is already a [tool](https://www.spelltool.com "www.spelltool.com") developed by Anguel Stankov written in PHP, but I wanted to give it a go as well.
+There is already a [tool](https://www.spelltool.com "www.spelltool.com") developed by Anguel Stankov written in PHP, but I wanted to give it a Go as well.
+
+The Go stack was inspired by [go-htmx-tailwind-example](https://github.com/jritsema/go-htmx-tailwind-example).
 
 ## Stack
 
@@ -22,11 +24,23 @@ There is already a [tool](https://www.spelltool.com "www.spelltool.com") develop
 ## Requirements
 
 - [Docker](https://docs.docker.com/get-docker/)
-- Go
+- [Go](https://go.dev/) 1.24 or higher
+- [Air](https://github.com/air-verse/air)
 
 ## Improvements
 
-- Update GO
 - Implement air
 - Get rid of Make
+- Update gitingore
+- Update GO
 - Add tests
+- Improve logging
+
+## Features
+
+- Input a string
+- Clean string of whitespaces
+- Send request to spell it out
+- Convert string to list of phonetic letters
+- Display list of phonetic letters
+- Introduce German.

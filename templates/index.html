@@ -6,16 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <script src="https://unpkg.com/htmx.org@1.9.2"></script>
     <link href="/css/output.css" rel="stylesheet" />
-    <title>Go + HTMX + Tailwind</title>
+    <title>Spell it out</title>
   </head>
   <body>
-    <main>
-      <div class="md:container md:mx-auto">
-        <h1 class="text-3xl">Go + HTMX + Tailwind Example</h1>
+    <main class="md:container md:mx-auto">
+      <h1 class="text-3xl text-center bg-red-900">Spell it out</h1>
         <br/>
         <span class="text-xl">Companies</span>
         <div>{{ template "companies.html" . }}</div>
-      </div>
     </main>
   </body>
 </html>
