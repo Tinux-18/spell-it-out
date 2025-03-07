@@ -4,7 +4,7 @@ A tool helping you to phonetically spell a text
 
 ## Motivation
 
-At the behest of Friedrich Mocker I read *[Hypermedia Systems](https://hypermedia.systems/book).*
+At the behest of [Friedrich Mocker](https://github.com/Friedrich-Mocker) I read *[Hypermedia Systems](https://hypermedia.systems/book).*
 
 When I learn something new, I use it to build someting.
 Almost mid way throught the book I had to spell out my name in German over the phone and missed a letter.
@@ -29,7 +29,6 @@ The Go stack was inspired by [go-htmx-tailwind-example](https://github.com/jrits
 
 ## Improvements
 
-- Implement air
 - Get rid of Make
 - Update gitingore
 - Update GO
