@@ -42,6 +42,9 @@ func main() {
 	router := http.NewServeMux()
 	router.Handle("GET /css/output.css", http.FileServer(http.FS(css)))
 
+	// spelling
+	router.Handle("GET /spelling", web.Action(getSpelling))
+
 	//add
 	router.Handle("GET /company/add", web.Action(addCompany))
 	router.Handle("POST /company", web.Action(saveNewCompany))

@@ -29,6 +29,13 @@ func index(r *http.Request) *web.Response {
 	return web.HTML(http.StatusOK, html, "index.html", data.companies, nil)
 }
 
+// GET /spelling
+func getSpelling(r *http.Request) *web.Response {
+	queryParams := r.URL.Query()
+	word := queryParams.Get("q")
+	return web.HTML(http.StatusOK, html, "spelling.html", word, nil)
+}
+
 // GET /company/add
 func addCompany(r *http.Request) *web.Response {
 	return web.HTML(http.StatusOK, html, "company-add.html", data.companies, nil)
