@@ -4,7 +4,7 @@ A tool helping you to phonetically spell a text
 
 ## Motivation
 
-At the behest of [Friedrich Mocker](https://github.com/Friedrich-Mocker) I read *[Hypermedia Systems](https://hypermedia.systems/book).*
+At the behest of [Friedrich Mocker](https://github.com/Friedrich-Mocker) I read *[Hypermedia Systems](https://hypermedia.systems/book/contents/).*
 
 When I learn something new, I use it to build someting.
 Almost mid way throught the book I had to spell out my name in German over the phone and missed a letter.
@@ -23,17 +23,33 @@ The Go stack was inspired by [go-htmx-tailwind-example](https://github.com/jrits
 
 ## Requirements
 
-- [Docker](https://docs.docker.com/get-docker/)
-- [Go](https://go.dev/) 1.24 or higher
+- [Docker Desktop](https://docs.docker.com/get-docker/)
+- [Go](https://go.dev/) ^1.24
 - [Air](https://github.com/air-verse/air)
+- [Tailwind](https://tailwindcss.com/blog/standalone-cli)
+
+## Run locally
+
+Start and watch project:
+
+```bash
+air
+```
+
+Update and watch CS (with the local Tailwind CLI):
+
+```bash
+./tailwindcss -i css/input.css -o css/output.css --watch
+```
 
 ## Improvements
 
+- Figure out TailWind generation (currently it is not working)
 - Get rid of Make
 - Update gitingore
-- Update GO
 - Add tests
 - Improve logging
+- decide if we keep it dockerized or not
 
 ## Features
 
