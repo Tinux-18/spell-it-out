@@ -53,12 +53,13 @@ Update and watch CS (with the local Tailwind CLI):
 
 ## Features
 
-- Input a string
-- Clean string of whitespaces
-- Send request to spell it out
-- Convert string to list of phonetic letters
-- Display list of phonetic letters
-- Introduce German.
+- handle common non-alphanumberic chars
+- indicatae that we do not support a char
+- style input
+- style output
+- deploy
+- add Phonetic Alphabet explanation
+- add info about author
 
 ## Sources
 
