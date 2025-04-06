@@ -1,98 +1,94 @@
 package main
 
-import "strconv"
+import (
+	"embed"
+	"encoding/json"
+	"fmt"
+	"io/fs"
+	"path/filepath"
+	"strings"
+)
 
-// Company represents a company
-type Company struct {
-	ID      string
-	Company string
-	Contact string
-	Country string
+//go:embed data/*.json
+var alphabetsFS embed.FS
+
+type Acrophony struct {
+	Letter string `json:"letter"`
+	Word   string `json:"word"`
 }
 
-// List of companies
-type Companies struct {
-	companies []Company
+type Alphabet struct {
+	Language    string      `json:"language"`
+	Acrophonies []Acrophony `json:"acrophonies"`
 }
 
-// Company data access
-var data Companies
+func (a *Alphabet) GetAcrophony(letter string) Acrophony {
+	for _, acrophony := range a.Acrophonies {
+		if acrophony.Letter == letter {
+			return acrophony
+		}
+	}
+	return Acrophony{}
+}
+
+func loadAlphabets() []Alphabet {
+	var alphabets []Alphabet
+
+	// Read all files from the data directory
+	entries, err := fs.ReadDir(alphabetsFS, "data")
+	if err != nil {
+		panic(fmt.Errorf("failed to read alphabets directory: %w", err))
+	}
+
+	for _, entry := range entries {
+		// Read the file content
+		filePath := filepath.Join("data", entry.Name())
+		content, err := fs.ReadFile(alphabetsFS, filePath)
+		if err != nil {
+			panic(fmt.Errorf("failed to read alphabet file %s: %w", filePath, err))
+		}
+
+		// Parse JSON into Alphabet struct
+		var alphabet Alphabet
+		if err := json.Unmarshal(content, &alphabet); err != nil {
+			panic(fmt.Errorf("failed to parse alphabet file %s: %w", filePath, err))
+		}
+
+		alphabets = append(alphabets, alphabet)
+	}
+
+	return alphabets
+}
+
+var data []Alphabet
 
 func init() {
-
-	data = Companies{
-		companies: []Company{
-			{
-				ID:      "1",
-				Company: "Amazon",
-				Contact: "Jeff Bezos",
-				Country: "United States",
-			},
-			{
-				ID:      "2",
-				Company: "Apple",
-				Contact: "Tim Cook",
-				Country: "United States",
-			},
-			{
-				ID:      "3",
-				Company: "Microsoft",
-				Contact: "Satya Nadella",
-				Country: "United States",
-			},
-		},
-	}
+	data = loadAlphabets()
 }
 
-func (c *Companies) getByID(id string) Company {
-	var result Company
-	for _, i := range c.companies {
-		if i.ID == id {
-			result = i
-			break
+func getAlphabetByLanguage(language string) (Alphabet, error) {
+	for _, alphabet := range data {
+		if alphabet.Language == language {
+			return alphabet, nil
 		}
 	}
-	return result
+	// Raise error if not found.
+	return Alphabet{}, fmt.Errorf("language '%s' not found", language)
 }
 
-func (c *Companies) update(company Company) {
-	result := []Company{}
-	for _, i := range c.companies {
-		if i.ID == company.ID {
-			i.Company = company.Company
-			i.Contact = company.Contact
-			i.Country = company.Country
-		}
-		result = append(result, i)
+func spell(word string, language string) ([]Acrophony, error) {
+	// get alphabet
+	alphabet, err := getAlphabetByLanguage(language)
+	if err != nil {
+		return nil, err
 	}
-	c.companies = result
-}
 
-func (c *Companies) add(company Company) {
-	max := 0
-	for _, i := range c.companies {
-		n, _ := strconv.Atoi(i.ID)
-		if n > max {
-			max = n
-		}
+	// spell phonetically
+	phoneticWords := make([]Acrophony, 0, len(word))
+	for _, letter := range word {
+		char := strings.ToLower(string(letter))
+		acrophony := alphabet.GetAcrophony(char)
+		phoneticWords = append(phoneticWords, acrophony)
 	}
-	max++
-	id := strconv.Itoa(max)
-
-	c.companies = append(c.companies, Company{
-		ID:      id,
-		Company: company.Company,
-		Contact: company.Contact,
-		Country: company.Country,
-	})
-}
-
-func (c *Companies) delete(id string) {
-	result := []Company{}
-	for _, i := range c.companies {
-		if i.ID != id {
-			result = append(result, i)
-		}
-	}
-	c.companies = result
+	return phoneticWords, nil
 }

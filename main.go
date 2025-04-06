@@ -45,19 +45,6 @@ func main() {
 	// spelling
 	router.Handle("GET /spelling", web.Action(getSpelling))
 
-	//add
-	router.Handle("GET /company/add", web.Action(addCompany))
-	router.Handle("POST /company", web.Action(saveNewCompany))
-	router.Handle("GET /company", web.Action(cancelSaveNewCompany))
-
-	//edit
-	router.Handle("GET /company/edit/{id}", web.Action(editCompany))
-	router.Handle("PUT /company/{id}", web.Action(saveExistingCompany))
-	router.Handle("GET /company/{id}", web.Action(cancelSaveExistingCompany))
-
-	//delete
-	router.Handle("DELETE /company/{id}", web.Action(deleteCompany))
-
 	//home
 	router.Handle("GET /", web.Action(index))
 	router.Handle("GET /index.html", web.Action(index))

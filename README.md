@@ -9,7 +9,7 @@ At the behest of [Friedrich Mocker](https://github.com/Friedrich-Mocker) I read 
 When I learn something new, I use it to build someting.
 Almost mid way throught the book I had to spell out my name in German over the phone and missed a letter.
 
-This is where the idea came to write a hypermedia driven application which spells out a string for you using the phonetic alphabet.
+This is where the idea came to write a hypermedia driven application which spells out a string for you using the [NATO phonetic alphabet](https://en.wikipedia.org/wiki/NATO_phonetic_alphabet).
 
 There is already a [tool](https://www.spelltool.com "www.spelltool.com") developed by Anguel Stankov written in PHP, but I wanted to give it a Go as well.
 
@@ -59,3 +59,7 @@ Update and watch CS (with the local Tailwind CLI):
 - Convert string to list of phonetic letters
 - Display list of phonetic letters
 - Introduce German.
+
+## Sources
+
+<https://de.wikipedia.org/wiki/Buchstabiertafel>
