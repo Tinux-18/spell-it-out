@@ -14,7 +14,8 @@ func index(r *http.Request) *web.Response {
 func getSpelling(r *http.Request) *web.Response {
 	queryParams := r.URL.Query()
 	word := queryParams.Get("word")
-	spelling, err := spell(word, "en")
+	language := queryParams.Get("lang")
+	spelling, err := spell(word, language)
 	if err != nil {
 		return web.HTML(http.StatusNotFound, html, "spelling.html", spelling, nil)
 	}
