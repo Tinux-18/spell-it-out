@@ -38,10 +38,6 @@ air
 ## Improvements
 
 - Get rid of Make
-- Update gitingore
-- Add tests
-- Improve logging
-- decide if we keep it dockerized or not
 
 ## Features
 
@@ -50,8 +46,16 @@ air
 - Send request to spell it out
 - Convert string to list of phonetic letters
 - Display list of phonetic letters
-- Introduce German.
+- Pick language between German & English.
 
 ## TODOS
 
-- Phonetic alphabet table (ideally with arrow and cursor navigation whicha allows to highlight a letter) rentered conditionally
+1. Highlight a row and move the highlight with the following events
+   - click
+   - arrowUp
+   - arrowDown
+2. Clear highlighting with:
+   1. esc
+   2. click outside the table
+3. Improve styling
+4. Footer with basic information
