@@ -8,8 +8,7 @@ import (
 )
 
 func index(r *http.Request) *web.Response {
-	data := spell.LoadAlphabets()
-	return web.HTML(http.StatusOK, html, "index.html", data, nil)
+	return web.HTML(http.StatusOK, html, "index.html", nil, nil)
 }
 
 // GET /spelling

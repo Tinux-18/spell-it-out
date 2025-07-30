@@ -22,13 +22,13 @@ type Alphabet struct {
 	Acrophonies []Acrophony `json:"acrophonies"`
 }
 
-func (a *Alphabet) GetAcrophony(letter string) Acrophony {
+func (a *Alphabet) GetAcrophony(letter string) (Acrophony, error) {
 	for _, acrophony := range a.Acrophonies {
 		if acrophony.Letter == letter {
-			return acrophony
+			return acrophony, nil
 		}
 	}
-	return Acrophony{}
+	return Acrophony{}, fmt.Errorf("no acrophony found for letter '%s'", letter)
 }
 
 func LoadAlphabets() []Alphabet {
@@ -84,10 +84,16 @@ func Word(word string, language string) ([]Acrophony, error) {
 	}
 
 	// spell phonetically
+	word = strings.TrimSpace(word)
 	phoneticWords := make([]Acrophony, 0, len(word))
 	for _, letter := range word {
 		char := strings.ToLower(string(letter))
-		acrophony := alphabet.GetAcrophony(char)
+		acrophony, err := alphabet.GetAcrophony(char)
+
+		// If the letter is not found in the alphabet, use the letter itself as the word.
+		if err != nil {
+			acrophony = Acrophony{Letter: char, Word: char}
+		}
 		phoneticWords = append(phoneticWords, acrophony)
 	}
 	return phoneticWords, nil
