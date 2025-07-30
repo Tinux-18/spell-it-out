@@ -6,8 +6,8 @@ A tool helping you to phonetically spell a text
 
 At the behest of [Friedrich Mocker](https://github.com/Friedrich-Mocker) I read *[Hypermedia Systems](https://hypermedia.systems/book/contents/).*
 
-When I learn something new, I use it to build someting.
-Almost mid way throught the book I had to spell out my name in German over the phone and missed a letter.
+When I learn something new, I use it to build something.
+Almost mid way through the book I had to spell out my name in German over the phone and missed a letter.
 
 This is where the idea came to write a hypermedia driven application which spells out a string for you using the [NATO phonetic alphabet](https://en.wikipedia.org/wiki/NATO_phonetic_alphabet).
 
@@ -18,15 +18,14 @@ The Go stack was inspired by [go-htmx-tailwind-example](https://github.com/jrits
 ## Stack
 
 - Go
-- [HTMX](https://htmx.org/)
-- Tailwind
+- [HTMX](https://htmx.org/) (from CDN)
+- [Bootstrap](https://getbootstrap.com/) (from CDN)
 
 ## Requirements
 
 - [Docker Desktop](https://docs.docker.com/get-docker/)
 - [Go](https://go.dev/) ^1.24
 - [Air](https://github.com/air-verse/air)
-- [Tailwind](https://tailwindcss.com/blog/standalone-cli)
 
 ## Run locally
 
@@ -36,15 +35,8 @@ Start and watch project:
 air
 ```
 
-Update and watch CS (with the local Tailwind CLI):
-
-```bash
-./tailwindcss -i css/input.css -o css/output.css --watch
-```
-
 ## Improvements
 
-- Figure out TailWind generation (currently it is not working)
 - Get rid of Make
 - Update gitingore
 - Add tests
@@ -53,14 +45,14 @@ Update and watch CS (with the local Tailwind CLI):
 
 ## Features
 
-- handle common non-alphanumberic chars
-- indicatae that we do not support a char
-- style input
-- style output
-- deploy
-- add Phonetic Alphabet explanation
-- add info about author
+- Input a string
+- Clean string of whitespaces
+- Send request to spell it out
+- Convert string to list of phonetic letters
+- Display list of phonetic letters
+- Introduce German.
 
-## Sources
+## TODOS
 
-<https://de.wikipedia.org/wiki/Buchstabiertafel>
+- Create 2 templates
+- Phonetic alphabet table (ideally with arrow and cursor navigation whicha allows to highlight a letter) rentered conditionally

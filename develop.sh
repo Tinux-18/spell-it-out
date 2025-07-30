@@ -1,6 +1,6 @@
 #!/bin/sh
-IMAGE=spell-it-out
-CONTAINER=spell-it-out
+IMAGE=nato-spell
+CONTAINER=nato-spell
 
 # Remove existing container in case it already exists.
 docker container rm $IMAGE --force || true

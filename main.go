@@ -19,9 +19,6 @@ var (
 	//go:embed all:templates/*
 	templateFS embed.FS
 
-	//go:embed css/output.css
-	css embed.FS
-
 	//parsed templates
 	html *template.Template
 )
@@ -40,7 +37,6 @@ func main() {
 
 	//add routes
 	router := http.NewServeMux()
-	router.Handle("GET /css/output.css", http.FileServer(http.FS(css)))
 
 	// spelling
 	router.Handle("GET /spelling", web.Action(getSpelling))

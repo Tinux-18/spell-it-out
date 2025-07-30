@@ -1,4 +1,4 @@
-<div id="spell">
+<div id="spell" class="text-center">
     <form action="/spelling" method="get" hx-target="#spell" hx-boost="true">
         <div>
             <input id="word" type="text"
@@ -10,9 +10,7 @@
                 <option value="de">🇩🇪 German</option>
             </select>
         </div>
-        <button type="submit"
-            class="inline-flex items-center h-8 px-4 m-2 text-sm text-blue-100 transition-colors duration-150 bg-blue-700 rounded-lg focus:shadow-outline hover:bg-blue-800"
-            href="">
+        <button type="submit" class="btn btn-primary mt-3">
             Spell it out
         </button>
     </form>
