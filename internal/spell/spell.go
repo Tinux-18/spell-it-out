@@ -31,7 +31,7 @@ func (a *Alphabet) GetAcrophony(letter string) Acrophony {
 	return Acrophony{}
 }
 
-func loadAlphabets() []Alphabet {
+func LoadAlphabets() []Alphabet {
 	var alphabets []Alphabet
 
 	// Read all files from the data directory
@@ -63,7 +63,7 @@ func loadAlphabets() []Alphabet {
 var data []Alphabet
 
 func init() {
-	data = loadAlphabets()
+	data = LoadAlphabets()
 }
 
 func getAlphabetByLanguage(language string) (Alphabet, error) {
@@ -76,7 +76,7 @@ func getAlphabetByLanguage(language string) (Alphabet, error) {
 	return Alphabet{}, fmt.Errorf("language '%s' not found", language)
 }
 
-func Spell(word string, language string) ([]Acrophony, error) {
+func Word(word string, language string) ([]Acrophony, error) {
 	// get alphabet
 	alphabet, err := getAlphabetByLanguage(language)
 	if err != nil {
