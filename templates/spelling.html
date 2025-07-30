@@ -1,1 +1,18 @@
-<div id="spelling" class="text-center">{{if .}}{{.}}{{end}}</div>
+<div id="spelling" class="text-center">{{if .}}
+    <div class="table-responsive mt-4">
+        <table class="table table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col" class="px-3 py-3">Symbol</th>
+                    <th scope="col" class="px-3 py-3">Code Word</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+                {{range .}}
+                {{ template "row.html". }}
+                {{end}}
+            </tbody>
+        </table>
+    </div>
+    {{end}}
+</div>

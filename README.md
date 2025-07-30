@@ -54,5 +54,4 @@ air
 
 ## TODOS
 
-- Create 2 templates
 - Phonetic alphabet table (ideally with arrow and cursor navigation whicha allows to highlight a letter) rentered conditionally
