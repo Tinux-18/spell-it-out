@@ -1,0 +1,149 @@
+{
+    "language": "de",
+    "acrophonies": [
+        {
+            "letter": "a",
+            "word": "Anton"
+        },
+        {
+            "letter": "b",
+            "word": "Berta"
+        },
+        {
+            "letter": "c",
+            "word": "Cäsar"
+        },
+        {
+            "letter": "d",
+            "word": "Dora"
+        },
+        {
+            "letter": "e",
+            "word": "Emil"
+        },
+        {
+            "letter": "f",
+            "word": "Friedrich"
+        },
+        {
+            "letter": "g",
+            "word": "Gustav"
+        },
+        {
+            "letter": "h",
+            "word": "Heinrich"
+        },
+        {
+            "letter": "i",
+            "word": "Ida"
+        },
+        {
+            "letter": "j",
+            "word": "Julius"
+        },
+        {
+            "letter": "k",
+            "word": "Kaufmann"
+        },
+        {
+            "letter": "l",
+            "word": "Ludwig"
+        },
+        {
+            "letter": "m",
+            "word": "Martha"
+        },
+        {
+            "letter": "n",
+            "word": "Nordpol"
+        },
+        {
+            "letter": "o",
+            "word": "Otto"
+        },
+        {
+            "letter": "p",
+            "word": "Paula"
+        },
+        {
+            "letter": "q",
+            "word": "Quelle"
+        },
+        {
+            "letter": "r",
+            "word": "Richard"
+        },
+        {
+            "letter": "s",
+            "word": "Samuel"
+        },
+        {
+            "letter": "t",
+            "word": "Theodor"
+        },
+        {
+            "letter": "u",
+            "word": "Ulrich"
+        },
+        {
+            "letter": "v",
+            "word": "Viktor"
+        },
+        {
+            "letter": "w",
+            "word": "Wilhelm"
+        },
+        {
+            "letter": "x",
+            "word": "Xanthippe"
+        },
+        {
+            "letter": "y",
+            "word": "Ypsilon"
+        },
+        {
+            "letter": "z",
+            "word": "Zacharias"
+        },
+        {
+            "letter": "0",
+            "word": "Null"
+        },
+        {
+            "letter": "1",
+            "word": "Eins"
+        },
+        {
+            "letter": "2",
+            "word": "Zwei"
+        },
+        {
+            "letter": "3",
+            "word": "Drei"
+        },
+        {
+            "letter": "4",
+            "word": "Vier"
+        },
+        {
+            "letter": "5",
+            "word": "Fünf"
+        },
+        {
+            "letter": "6",
+            "word": "Sechs"
+        },
+        {
+            "letter": "7",
+            "word": "Sieben"
+        },
+        {
+            "letter": "8",
+            "word": "Acht"
+        },
+        {
+            "letter": "9",
+            "word": "Neun"
+        }
+    ]
+}
