@@ -13,8 +13,9 @@ import (
 var alphabetsFS embed.FS
 
 type Acrophony struct {
-	Letter string `json:"letter"`
-	Word   string `json:"word"`
+	Letter     string `json:"letter"`
+	Word       string `json:"word"`
+	IsSelected bool   `json:"-"` // Used for highlighting in the UI
 }
 
 type Alphabet struct {
