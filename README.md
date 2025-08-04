@@ -57,5 +57,4 @@ air
 2. Clear highlighting with:
    1. esc
    2. click outside the table
-3. Improve styling
-4. Footer with basic information
+3. Footer with basic information
