@@ -35,10 +35,6 @@ Start and watch project:
 air
 ```
 
-## Improvements
-
-- Get rid of Make
-
 ## Features
 
 - Input a string
